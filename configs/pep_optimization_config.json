@@ -1,0 +1,52 @@
+{
+  "_description": "Configuration for general PEP optimization framework using PEPFlow",
+  "_source": "Extracted from examples/use_case_3_pep_optimization.py",
+
+  "framework": {
+    "name": "general_pep_optimization",
+    "supported_algorithms": ["gradient_descent", "heavy_ball", "accelerated_gradient", "comparison"]
+  },
+
+  "analysis": {
+    "algorithm": "gradient_descent",
+    "iterations": 5,
+    "comparison_mode": false
+  },
+
+  "algorithm_settings": {
+    "gradient_descent": {
+      "stepsize": "1/L",
+      "convergence_rate": "O(1/k)"
+    },
+    "heavy_ball": {
+      "stepsize": "1/L",
+      "momentum": 0.5,
+      "convergence_rate": "O(1/k)"
+    },
+    "accelerated_gradient": {
+      "stepsize": "1/L",
+      "momentum": "adaptive",
+      "convergence_rate": "O(1/k^2)"
+    }
+  },
+
+  "parameters": {
+    "lipschitz_constant": 1.0,
+    "initial_radius": 1.0,
+    "tolerance": 1e-8
+  },
+
+  "output": {
+    "format": "detailed",
+    "save_results": true,
+    "include_dual_analysis": true,
+    "comparison_plot": false,
+    "output_dir": "results/pep_optimization"
+  },
+
+  "numerical_settings": {
+    "solver": "OSQP",
+    "precision": 1e-10,
+    "max_iterations": 1000
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "_description": "Configuration for accelerated gradient method (AGM/Nesterov) analysis using PEPFlow",
+  "_source": "Extracted from examples/use_case_2_accelerated_gradient.py",
+
+  "algorithm": {
+    "name": "accelerated_gradient_method",
+    "type": "Nesterov",
+    "stepsize": "1/L",
+    "momentum": "adaptive",
+    "theta_sequence": "optimal"
+  },
+
+  "analysis": {
+    "iterations": 5,
+    "proof_steps": 3,
+    "convergence_rate": "O(1/k^2)",
+    "analytical_bound": "L/(2*theta_N^2)"
+  },
+
+  "parameters": {
+    "lipschitz_constant": 1.0,
+    "initial_radius": 1.0,
+    "tolerance": 1e-8
+  },
+
+  "theta_computation": {
+    "initial_theta": 0,
+    "recursion": "(1 + sqrt(1 + 4*theta_{k-1}^2)) / 2",
+    "cache_values": true
+  },
+
+  "output": {
+    "format": "numerical",
+    "save_plot": true,
+    "plot_format": "png",
+    "include_verification": true,
+    "include_theta_sequence": true,
+    "output_dir": "results/accelerated_gradient"
+  },
+
+  "numerical_settings": {
+    "solver": "OSQP",
+    "precision": 1e-10,
+    "log_scale_plot": true,
+    "dual_analysis": true
+  }
+}

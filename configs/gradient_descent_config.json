@@ -1,0 +1,37 @@
+{
+  "_description": "Configuration for gradient descent convergence analysis using PEPFlow",
+  "_source": "Extracted from examples/use_case_1_gradient_descent.py",
+
+  "algorithm": {
+    "name": "gradient_descent",
+    "stepsize": "1/L",
+    "stepsize_description": "Fixed stepsize as 1/L (inverse of Lipschitz constant)"
+  },
+
+  "analysis": {
+    "iterations": 8,
+    "proof_steps": 2,
+    "convergence_rate": "O(1/k)",
+    "analytical_bound": "L/(4*N+2)"
+  },
+
+  "parameters": {
+    "lipschitz_constant": 1.0,
+    "initial_radius": 1.0,
+    "tolerance": 1e-8
+  },
+
+  "output": {
+    "format": "numerical",
+    "save_plot": true,
+    "plot_format": "png",
+    "include_verification": true,
+    "output_dir": "results/gradient_descent"
+  },
+
+  "numerical_settings": {
+    "solver": "OSQP",
+    "precision": 1e-10,
+    "log_scale_plot": true
+  }
+}
