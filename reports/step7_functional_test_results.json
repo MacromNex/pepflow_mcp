@@ -1,0 +1,68 @@
+{
+  "test_date": "2025-12-31T23:55:46.519965",
+  "tests": {
+    "tool_discovery": {
+      "status": "passed",
+      "duration": "0.000s",
+      "details": {
+        "total_tools": 15,
+        "tool_names": [
+          "get_job_status",
+          "get_job_result",
+          "get_job_log",
+          "cancel_job",
+          "list_jobs",
+          "analyze_gradient_descent",
+          "analyze_accelerated_gradient",
+          "analyze_optimization_algorithm",
+          "submit_gradient_descent_analysis",
+          "submit_accelerated_gradient_analysis",
+          "submit_optimization_comparison",
+          "submit_parameter_sweep",
+          "get_available_algorithms",
+          "get_default_configs",
+          "validate_pepflow_installation"
+        ],
+        "job_management_tools": 5,
+        "sync_analysis_tools": 3,
+        "submit_tools": 4,
+        "utility_tools": 6
+      }
+    },
+    "get_available_algorithms": {
+      "status": "error",
+      "error": "'FunctionTool' object is not callable"
+    },
+    "get_default_configs": {
+      "status": "error",
+      "error": "'FunctionTool' object is not callable"
+    },
+    "validate_pepflow_installation": {
+      "status": "error",
+      "error": "'FunctionTool' object is not callable"
+    },
+    "analyze_gradient_descent": {
+      "status": "error",
+      "error": "'FunctionTool' object is not callable"
+    },
+    "analyze_accelerated_gradient": {
+      "status": "error",
+      "error": "'FunctionTool' object is not callable"
+    },
+    "analyze_optimization_algorithm": {
+      "status": "error",
+      "error": "'FunctionTool' object is not callable"
+    },
+    "job_submission": {
+      "status": "error",
+      "error": "'FunctionTool' object is not callable"
+    }
+  },
+  "summary": {
+    "total_tests": 4,
+    "passed": 1,
+    "failed": 3,
+    "pass_rate": "25.0%",
+    "overall_status": "failed"
+  }
+}

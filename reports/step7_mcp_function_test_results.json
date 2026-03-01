@@ -1,0 +1,74 @@
+{
+  "test_date": "2025-12-31T23:57:47.379637",
+  "tests": {
+    "get_available_algorithms": {
+      "status": "passed",
+      "duration": "0.000s",
+      "result_keys": [
+        "status",
+        "algorithms",
+        "total_algorithms"
+      ]
+    },
+    "get_default_configs": {
+      "status": "passed",
+      "duration": "0.000s",
+      "result_keys": [
+        "status",
+        "configs"
+      ]
+    },
+    "validate_pepflow_installation": {
+      "status": "passed",
+      "duration": "2.265s",
+      "result_keys": [
+        "status",
+        "pepflow_available",
+        "dependencies",
+        "message"
+      ]
+    },
+    "analyze_gradient_descent": {
+      "status": "passed",
+      "duration": "2.269s",
+      "has_results": true
+    },
+    "analyze_accelerated_gradient": {
+      "status": "passed",
+      "duration": "14.795s",
+      "has_results": true
+    },
+    "analyze_optimization_algorithm": {
+      "status": "passed",
+      "duration": "0.183s",
+      "has_results": true
+    },
+    "job_submission": {
+      "status": "passed",
+      "duration": "0.001s",
+      "job_id": "11a4017b"
+    },
+    "job_status": {
+      "status": "passed",
+      "job_status": "pending"
+    },
+    "job_listing": {
+      "status": "passed",
+      "job_count": 2
+    },
+    "job_log": {
+      "status": "passed",
+      "log_lines": 0
+    },
+    "job_cancellation": {
+      "status": "passed"
+    }
+  },
+  "summary": {
+    "total_tests": 11,
+    "passed": 11,
+    "failed": 0,
+    "pass_rate": "100.0%",
+    "overall_status": "passed"
+  }
+}

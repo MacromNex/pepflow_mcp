@@ -1,0 +1,265 @@
+{
+  "project_name": "pepflow-tools",
+  "description": "MCP tools for optimization algorithm convergence analysis using PEPFlow framework",
+  "framework": "Performance Estimation Problems (PEP)",
+  "domain": "Mathematical optimization and convergence analysis",
+  "tools": [
+    {
+      "name": "analyze_gradient_descent",
+      "type": "sync",
+      "description": "Analyze gradient descent convergence with O(1/k) rate verification",
+      "algorithm": "Gradient Descent",
+      "convergence_rate": "O(1/k)",
+      "runtime": "5-30 seconds",
+      "example_prompt": "Analyze gradient descent convergence for 8 iterations with 2 proof steps"
+    },
+    {
+      "name": "analyze_accelerated_gradient",
+      "type": "sync",
+      "description": "Analyze Nesterov's accelerated gradient method with O(1/k²) verification",
+      "algorithm": "Nesterov AGM",
+      "convergence_rate": "O(1/k²)",
+      "runtime": "8-60 seconds",
+      "example_prompt": "Analyze accelerated gradient method for 5 iterations with theta sequence computation"
+    },
+    {
+      "name": "analyze_optimization_algorithm",
+      "type": "sync",
+      "description": "General framework for analyzing multiple optimization algorithms",
+      "algorithm": "Multiple (GD, Heavy Ball, AGM, Comparison)",
+      "convergence_rate": "Variable",
+      "runtime": "5-120 seconds",
+      "example_prompt": "Compare gradient descent, heavy ball (momentum=0.5), and accelerated gradient methods"
+    },
+    {
+      "name": "submit_gradient_descent_analysis",
+      "type": "submit",
+      "description": "Submit large-scale gradient descent analysis job",
+      "algorithm": "Gradient Descent",
+      "default_params": "20 iterations, 10 proof steps",
+      "example_prompt": "Submit gradient descent analysis for 50 iterations and 20 proof steps"
+    },
+    {
+      "name": "submit_accelerated_gradient_analysis",
+      "type": "submit",
+      "description": "Submit extensive accelerated gradient analysis job",
+      "algorithm": "Nesterov AGM",
+      "default_params": "15 iterations, 8 proof steps",
+      "example_prompt": "Submit accelerated gradient analysis for extensive theta computation"
+    },
+    {
+      "name": "submit_optimization_comparison",
+      "type": "submit",
+      "description": "Submit comprehensive algorithm comparison job",
+      "algorithm": "Multi-algorithm comparison",
+      "default_params": "10 iterations, 3 algorithms",
+      "example_prompt": "Submit comparison of all optimization algorithms for benchmarking"
+    },
+    {
+      "name": "submit_parameter_sweep",
+      "type": "submit",
+      "description": "Submit parameter sweep analysis for algorithm tuning",
+      "algorithm": "Variable",
+      "default_params": "Parameter ranges, base iterations",
+      "example_prompt": "Submit parameter sweep for heavy_ball with momentum values [0.1, 0.3, 0.5, 0.7, 0.9]"
+    },
+    {
+      "name": "get_job_status",
+      "type": "job_management",
+      "description": "Check job progress and status",
+      "example_prompt": "Check status of job abc12345"
+    },
+    {
+      "name": "get_job_result",
+      "type": "job_management",
+      "description": "Get completed job results",
+      "example_prompt": "Get results for completed job abc12345"
+    },
+    {
+      "name": "get_job_log",
+      "type": "job_management",
+      "description": "View execution logs from jobs",
+      "example_prompt": "Show me the last 100 lines of logs for job abc12345"
+    },
+    {
+      "name": "cancel_job",
+      "type": "job_management",
+      "description": "Cancel running jobs",
+      "example_prompt": "Cancel job abc12345"
+    },
+    {
+      "name": "list_jobs",
+      "type": "job_management",
+      "description": "List all submitted jobs with filtering",
+      "example_prompt": "List all running jobs"
+    },
+    {
+      "name": "get_available_algorithms",
+      "type": "utility",
+      "description": "List supported optimization algorithms",
+      "example_prompt": "What optimization algorithms are available?"
+    },
+    {
+      "name": "get_default_configs",
+      "type": "utility",
+      "description": "Get default configuration parameters",
+      "example_prompt": "Show me the default configurations for all algorithms"
+    },
+    {
+      "name": "validate_pepflow_installation",
+      "type": "utility",
+      "description": "Check PEPFlow framework installation",
+      "example_prompt": "Verify that PEPFlow is properly installed"
+    }
+  ],
+  "scripts": [
+    {
+      "name": "gradient_descent_analysis.py",
+      "description": "Gradient descent convergence analysis with O(1/k) verification",
+      "algorithm": "Gradient Descent",
+      "convergence_rate": "O(1/k)",
+      "example_command": "mamba run -p ./env python scripts/gradient_descent_analysis.py --config configs/gradient_descent_config.json --iterations 8 --proof-steps 2"
+    },
+    {
+      "name": "accelerated_gradient_analysis.py",
+      "description": "Nesterov's accelerated gradient method with O(1/k²) verification",
+      "algorithm": "Nesterov AGM",
+      "convergence_rate": "O(1/k²)",
+      "example_command": "mamba run -p ./env python scripts/accelerated_gradient_analysis.py --config configs/accelerated_gradient_config.json --iterations 5 --proof-steps 3"
+    },
+    {
+      "name": "pep_optimization_framework.py",
+      "description": "General PEP optimization framework for multiple algorithms",
+      "algorithm": "Multiple (gradient_descent, heavy_ball, accelerated_gradient, comparison)",
+      "convergence_rate": "Variable",
+      "example_command": "mamba run -p ./env python scripts/pep_optimization_framework.py --algorithm comparison --iterations 3"
+    }
+  ],
+  "demo_data": [
+    {
+      "file": "use_case_1_gradient_descent.py",
+      "description": "Example gradient descent convergence analysis",
+      "used_by": ["analyze_gradient_descent", "submit_gradient_descent_analysis"]
+    },
+    {
+      "file": "use_case_2_accelerated_gradient.py",
+      "description": "Example accelerated gradient method analysis with theta sequences",
+      "used_by": ["analyze_accelerated_gradient", "submit_accelerated_gradient_analysis"]
+    },
+    {
+      "file": "use_case_3_pep_optimization.py",
+      "description": "Example multi-algorithm comparison using PEP framework",
+      "used_by": ["analyze_optimization_algorithm", "submit_optimization_comparison"]
+    },
+    {
+      "directory": "data/gd/",
+      "description": "Gradient descent algorithm notebooks and examples",
+      "used_by": ["gradient descent tools"]
+    },
+    {
+      "directory": "data/agm/",
+      "description": "Accelerated gradient method notebooks and examples",
+      "used_by": ["accelerated gradient tools"]
+    },
+    {
+      "directory": "data/pgm/",
+      "description": "Proximal gradient method examples (future extensions)",
+      "used_by": ["future tools"]
+    }
+  ],
+  "configs": [
+    {
+      "file": "gradient_descent_config.json",
+      "description": "Configuration for gradient descent analysis",
+      "algorithm": "Gradient Descent",
+      "parameters": {
+        "iterations": 8,
+        "proof_steps": 2,
+        "lipschitz_constant": 1.0,
+        "initial_radius": 1.0,
+        "stepsize": "1/L"
+      }
+    },
+    {
+      "file": "accelerated_gradient_config.json",
+      "description": "Configuration for accelerated gradient method analysis",
+      "algorithm": "Nesterov AGM",
+      "parameters": {
+        "iterations": 5,
+        "proof_steps": 3,
+        "lipschitz_constant": 1.0,
+        "initial_radius": 1.0,
+        "theta_computation": true
+      }
+    },
+    {
+      "file": "pep_optimization_config.json",
+      "description": "Configuration for general PEP optimization framework",
+      "algorithm": "Multiple algorithms",
+      "parameters": {
+        "algorithm": "gradient_descent",
+        "iterations": 5,
+        "momentum": 0.5,
+        "comparison_mode": true
+      }
+    }
+  ],
+  "installation": {
+    "environment_manager": "mamba (preferred) or conda",
+    "python_version": "3.10+",
+    "key_dependencies": [
+      "PEPFlow framework",
+      "NumPy (2.2.6)",
+      "SymPy (1.14.0)",
+      "CVXPY with solvers (OSQP, SCS, Clarabel)",
+      "Matplotlib",
+      "FastMCP (2.14.2)"
+    ],
+    "installation_steps": [
+      "Create conda environment with Python 3.10",
+      "Install PEPFlow framework from repo/PEPFlow",
+      "Install MCP dependencies (fastmcp, loguru)",
+      "Install mathematical solvers from conda-forge"
+    ]
+  },
+  "mcp_server": {
+    "name": "pepflow-tools",
+    "server_file": "src/server.py",
+    "tool_count": 15,
+    "categories": {
+      "sync_analysis": 3,
+      "submit_analysis": 4,
+      "job_management": 5,
+      "utilities": 3
+    }
+  },
+  "mathematical_background": {
+    "framework": "Performance Estimation Problems (PEP)",
+    "problem_class": "Smooth convex optimization",
+    "analysis_type": "Worst-case convergence analysis",
+    "algorithms": {
+      "gradient_descent": {
+        "form": "x_{k+1} = x_k - (1/L)∇f(x_k)",
+        "convergence": "O(1/k)",
+        "bound": "f(x_k) - f* ≤ L/(4k+2) · R²"
+      },
+      "heavy_ball": {
+        "form": "x_{k+1} = x_k - (1/L)∇f(x_k) + β(x_k - x_{k-1})",
+        "convergence": "O(1/k)",
+        "parameters": ["momentum β"]
+      },
+      "accelerated_gradient": {
+        "form": "Nesterov AGM with optimal theta sequence",
+        "convergence": "O(1/k²)",
+        "bound": "f(x_k) - f* ≤ L/(2θ_k²) · R²"
+      }
+    }
+  },
+  "validation_status": {
+    "all_paths_verified": true,
+    "scripts_tested": true,
+    "mcp_server_functional": true,
+    "examples_working": true,
+    "config_files_valid": true
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "test_date": "2025-12-31T23:54:23.534568",
+  "server_name": "optimization-analysis",
+  "project_root": "/home/xux/Desktop/CycPepMCP/CycPepMCP/tool-mcps/pepflow_mcp",
+  "tests": {
+    "mcp_registration": {
+      "status": "passed",
+      "timestamp": "2025-12-31T23:54:25.609366",
+      "details": {
+        "connection_status": "connected"
+      },
+      "error": null
+    },
+    "server_startup": {
+      "status": "passed",
+      "timestamp": "2025-12-31T23:54:26.738266",
+      "details": {
+        "tool_count": 15
+      },
+      "error": null
+    },
+    "pepflow_import": {
+      "status": "passed",
+      "timestamp": "2025-12-31T23:54:29.411607",
+      "details": {
+        "pepflow_status": "available",
+        "sympy_version": "1.14.0",
+        "numpy_version": "2.2.6"
+      },
+      "error": null
+    },
+    "job_directory": {
+      "status": "passed",
+      "timestamp": "2025-12-31T23:54:29.411938",
+      "details": {
+        "jobs_dir": "/home/xux/Desktop/CycPepMCP/CycPepMCP/tool-mcps/pepflow_mcp/jobs",
+        "writable": true
+      },
+      "error": null
+    },
+    "scripts_availability": {
+      "status": "passed",
+      "timestamp": "2025-12-31T23:54:29.412013",
+      "details": {
+        "scripts_found": 3
+      },
+      "error": null
+    },
+    "configs_availability": {
+      "status": "passed",
+      "timestamp": "2025-12-31T23:54:29.412247",
+      "details": {
+        "valid_configs": 3
+      },
+      "error": null
+    }
+  },
+  "issues": [],
+  "summary": {
+    "total_tests": 6,
+    "passed": 6,
+    "failed": 0,
+    "pass_rate": "100.0%",
+    "overall_status": "passed"
+  }
+}
